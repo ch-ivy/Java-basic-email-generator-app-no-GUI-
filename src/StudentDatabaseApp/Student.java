@@ -8,7 +8,7 @@ public class Student {
 	private static int ID = 1000, costOfCourse = 600;
 	
 	
-	//constructor promps students to enter name and year
+	//constructor prompt students to enter name and year
 	public Student()
 	{
 		Scanner scan = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class Student {
 	//generate ID
 	 private void setStudentID()
 	 {
-		 //gradelevel + static id = dtudent id
+		 //grade level + static id = student id
 		 ID++;
 		 this.StdID = gradeYear + "" + ID;
 		 
@@ -64,6 +64,26 @@ public class Student {
 	 }
 	
 	//View Balance
+	 public void viewBalance()
+	 {
+		 System.out.println("Your Balance is : " + tuitionBalance);
+	 }
 	
 	//Pay tuition
+	 
+	 public void payTuition()
+	 { 
+		 viewBalance();
+		 System.out.println("Enter payment for courses!");
+		 Scanner in = new Scanner(System.in);
+		 int payment = in.nextInt();
+		 tuitionBalance -= payment;
+		 System.out.println("Thank you for your payment of " + payment);
+		 viewBalance();
+	 }
+	 
+	 public String showinfo()
+	 {
+		 return "Name : " + firstname + " " + lastname + "\n Courses Enrolled => " + courses + "\nTuition Balance: " + tuitionBalance;
+	 }
 }
