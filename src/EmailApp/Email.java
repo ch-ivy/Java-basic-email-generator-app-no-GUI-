@@ -8,7 +8,7 @@ public class Email {
 	private String password;
 	private String department;
 	private String alternateEmail, email;
-	private int  mailboxCapacity, defaultPasswordLength = 10;
+	private int  mailboxCapacity = 500, defaultPasswordLength = 10;
 	
 	//Constructor to receive the first name and last name
 	public Email (String firstname, String lastname)
@@ -66,8 +66,35 @@ public class Email {
 		 return new String(password);
 	 }
 	//set the mailbox capacity
-	
+	public void setMailBoxCapacity(int capacity)
+	{
+		this.mailboxCapacity = capacity;
+	}
 	//set the alternate email
 	
+	public void setAlternateEmail(String altemail)
+	{
+		this.alternateEmail = altemail;
+	}
+	
 	//change the password
+	
+	public void changePassword(String password)
+	{
+		this.password = password;
+	}
+	
+	public int getMailboxCapacity() 
+	{
+		return mailboxCapacity;
+	}
+	
+	public String getAlternateEmail()
+	{
+		return alternateEmail;
+	}
+	public String getPassword() 
+	{
+		return password;
+	}
 }
