@@ -3,7 +3,7 @@ package StudentDatabaseApp;
 import java.util.Scanner;
 
 public class Student {
-	private String StdID, firstname, lastname,courses = null;  
+	private String StdID, firstname, lastname, courses = null;  
 	private int    tuitionBalance = 0, gradeYear;
 	private static int ID = 1000, costOfCourse = 600;
 	
@@ -13,17 +13,17 @@ public class Student {
 	{
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("Enter Student Firstname");
+		System.out.print("Enter Student Firstname ");
 		this.firstname = scan.nextLine();
 		
-		System.out.print("\nEnter Student Lastname");
+		System.out.print("\nEnter Student Lastname ");
 		this.lastname = scan.nextLine();
 		
 		System.out.print("Enter Student Class Level \n1 For Freshman \n2 For Sophmore \n3 For Junior \n4 For Senior ");
 		this.gradeYear = scan.nextInt();
 		
 		setStudentID();
-		System.out.println(firstname + " " + lastname  + "  "+ gradeYear + " " + StdID);
+
 		
 		
 	}
@@ -43,13 +43,13 @@ public class Student {
 
 		 do
 		 {
-			 System.out.print("Enter a course to Enroll, 0 to quit");
+			 System.out.print("Enter a course to Enroll, 0 to quit ");
 
 				 Scanner scan = new Scanner(System.in);
 				 String course = scan.nextLine();
 				 if(!course.equals("0"))
 			 {
-				 courses+="\n" + course;
+				 courses+="\n   " + course;
 				 tuitionBalance += costOfCourse;
 			 }
 				 else
@@ -58,8 +58,7 @@ public class Student {
 				 }
 		 }
 		 while(1 != 0);
-		 System.out.println("EROLLED IN: " + courses);
-		 System.out.println("TUITION BALANCE: " + tuitionBalance);
+
 		 
 	 }
 	
@@ -81,9 +80,10 @@ public class Student {
 		 System.out.println("Thank you for your payment of " + payment);
 		 viewBalance();
 	 }
-	 
+	 //show status
 	 public String showinfo()
 	 {
-		 return "Name : " + firstname + " " + lastname + "\n Courses Enrolled => " + courses + "\nTuition Balance: " + tuitionBalance;
+		 return "Name : " + firstname + " " + lastname + "\nGrade Level : " + gradeYear + "\nStuden ID: " + StdID +
+				 "\n Courses Enrolled => " + courses + "\nTuition Balance: $" + tuitionBalance;
 	 }
 }
